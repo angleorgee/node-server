@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { readJSON, writeJSON } from "../utils";
-import { NewsItem } from "../types";
+import { readJSON, writeJSON } from "../../utils";
+import { NewsItem } from "../../types";
 import { v4 as uuidv4 } from "uuid";
-import { sendSuccess, sendError } from "../utils/index";
+import { sendSuccess, sendError } from "../../utils/index";
 
 // 获取新闻列表
 export function getNewsService(): NewsItem[] {

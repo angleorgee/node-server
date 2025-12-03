@@ -1,7 +1,7 @@
 import { Router } from "express";
-import * as newsController from "../controllers/news.controller";
-import { generateValidator } from "../middlewares/validateSchema";
-import { NewsItemSchema } from "../types/modules/news";
+import * as newsController from "../../controllers/news.controller";
+import { generateValidator } from "../../middlewares/validateSchema";
+import { NewsItemSchema } from "../../types/modules/news";
 import z from "zod";
 const router = Router();
 

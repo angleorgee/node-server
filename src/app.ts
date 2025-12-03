@@ -1,5 +1,5 @@
 import express from "express";
-import newsRouter from "./routes/news.routes";
+import routes from "./routes/index.routes";
 import { responseGuard } from "./middlewares/responseGuard";
 import { errorHandler } from "./middlewares/errorHandler";
 import { methodNotAllowed } from "./middlewares/methodGuard";
@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(responseGuard);
-app.use("/intranetServer", newsRouter);
+app.use("/intranetServer", routes);
 app.use(errorHandler);
 app.use(methodNotAllowed);
 

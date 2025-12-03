@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import * as newsService from "../services/news.service";
+import * as newsService from "../services/index.service";
 import type { NewsItem } from "../types";
 
 export function getNews(_req: Request, res: Response) {

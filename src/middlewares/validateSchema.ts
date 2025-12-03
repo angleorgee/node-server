@@ -1,4 +1,5 @@
 import type { Request, Response, NextFunction } from "express";
+import { rejects } from "node:assert";
 import { z, ZodTypeAny } from "zod";
 
 /**
@@ -10,7 +11,7 @@ export function generateValidator<T extends ZodTypeAny>(
   schema: T,
   options: { optionalArray?: boolean } = { optionalArray: true }
 ) {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (req: Request, _res: Response, next: NextFunction) => {
     try {
       let data = req.body;
 
@@ -25,7 +26,7 @@ export function generateValidator<T extends ZodTypeAny>(
     } catch (err: any) {
       console.log(err.message)
       if (err instanceof z.ZodError) {
-        return res.sendError(400, err.message);
+        throw new Error(err.message);
       }
       next(err);
     }
