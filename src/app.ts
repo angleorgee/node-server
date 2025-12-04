@@ -4,6 +4,7 @@ import { responseGuard } from "./middlewares/responseGuard";
 import { errorHandler } from "./middlewares/errorHandler";
 import { methodNotAllowed } from "./middlewares/methodGuard";
 import * as z from "zod";
+import './utils/modules/logs';
 z.config(z.locales.zhCN());
 
 
